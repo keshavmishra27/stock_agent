@@ -22,6 +22,7 @@ Profit and loss tracking with trading signals output
 <br>
 The project uses Yandex (YNDX) stock tick data in CSV format.
 <br>
+
 # **Training dataset:**
 YNDX_150101_151231.csv
 <br>
@@ -144,7 +145,7 @@ Run the script:
   python train_test_dqn.py
 </code></pre>
 Monitor training progress (episode loss, mean reward).
-After training, observe testing results with trading signals and final net P/L.
+After training, observe the testing results, including trading signals and the final net profit/loss.
 
 
 
