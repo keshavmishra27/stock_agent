@@ -142,7 +142,7 @@ Matplotlib/Seaborn (optional for plotting)
 Place the training and testing CSVs (YNDX_150101_151231.csv, YNDX_160101_161231.csv) in the project folder.
 Run the script:
 <pre><code>
-  python train_test_dqn.py
+  python stock.py
 </code></pre>
 Monitor training progress (episode loss, mean reward).
 After training, observe the testing results, including trading signals and the final net profit/loss.
