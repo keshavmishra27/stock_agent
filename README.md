@@ -16,8 +16,8 @@ Target network synchronization for stable learning
 ε-greedy exploration strategy with annealing
 Training and testing loops for live simulation on unseen stock data
 Profit and loss tracking with trading signals output
-
 <br>
+
 #**data**
 <br>
 The project uses Yandex (YNDX) stock tick data in CSV format.
@@ -28,8 +28,10 @@ YNDX_150101_151231.csv
 
 #**Testing dataset:**
 YNDX_160101_161231.csv
+<br>
 
 #**Columns are renamed to standard OHLCV:**
+<br>
 DATE
 TIME
 OPEN
@@ -37,15 +39,38 @@ HIGH
 LOW
 CLOSE
 VOL
+<br>
 
 #**During preprocessing:**
+<br>
 
 HIGH, LOW, and CLOSE are normalized relative to the open price.
 Rows with constant values are dropped.
 Only OHLC values are retained.
+<br>
 
 #**Actions**
+<br>
 The agent can perform 3 actions:
 do_nothing → hold position
 buy → open a long position
 close → close an active long position
+<br>
+
+#**Neural Network (Dueling Conv1D Q-Network)
+The model uses temporal convolution to extract features across observation bars:
+Conv1D layers → extract short-term patterns
+Dueling architecture:
+State Value stream
+Advantage stream
+Combined Q-value:
+<br>
+Q(s,a)=V(s)+A(s,a)− 
+∣A∣
+1
+  
+a
+∑
+ A(s,a)
+
+
