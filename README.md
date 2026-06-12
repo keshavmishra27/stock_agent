@@ -108,7 +108,16 @@ Net profit/loss over the session: 12.35%
 Step 1200 - buy at open price 80.25
 Step 1205 - close at open price 81.30, Profit/Loss: 1.31%
 </code></pre>
+# **Evaluation & Benchmarking**
 <br>
+To demonstrate rigorous ML practices, the agent's performance is automatically benchmarked against a **Buy & Hold Baseline**.
+
+**Evaluation Methodology:**
+* **Train/Test Split:** The dataset is split chronologically (2015 for Training, 2016 for Testing). This Out-of-Time validation guarantees no data leakage and simulates a true forward-looking trading environment.
+* **Automated Reporting:** At the end of testing, an `EVALUATION_REPORT.md` is generated and a dual-line equity curve `benchmark_comparison.png` is plotted, directly comparing the Agent vs. Baseline.
+* **Performance Metrics:** Includes Win Rate, Profit Factor, Gross Profit/Loss, and Average Trade Size, giving a complete picture beyond just accuracy.
+<br>
+
 
 # **project structure**
 <pre><code>
